@@ -32060,6 +32060,24 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.main-content {
+  padding-left: 17rem;
+  padding-top: 4.5rem;
+  padding-right: 1rem;
+}
+
+.main-content .title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  width: 5px;
+  background-color: #F49AA5;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -189099,3 +189117,4 @@ video {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
