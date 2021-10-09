@@ -45,7 +45,7 @@ class SectionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.section.show');
     }
 
     /**

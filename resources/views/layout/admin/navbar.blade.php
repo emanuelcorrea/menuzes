@@ -35,7 +35,9 @@
             </div>
             <div class="submenu top-0">
                 <ul>
-                    <li class="py-3 pl-10 hover:text-white text-sm">Atualizar Seção</li>
+                    <li class="py-3 pl-10 hover:text-white text-sm">
+                        <a href="{{ url('admin') }}">Atualizar Seção</a>
+                    </li>
                 </ul>
             </div>
         </li>
