@@ -16,25 +16,9 @@
         </div>
         <div class="w-full bg-white">
             <ul>
-                <x-section :id="1"/>
-                <x-section :id="2"/>
-                <x-section :id="3"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
-                <x-section :id="4"/>
+                @foreach($sections as $section)
+                    <x-section :section=$section />
+                @endforeach
             </ul>
         </div>
     </div>

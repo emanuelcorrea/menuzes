@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -41,11 +42,19 @@ class SectionController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
-        return view('admin.section.show');
+        $section = Section::find($id);
+
+        $items = $section->sectionItems;
+        $count = count($items);
+
+        return view('admin.section.show', [
+            'items' => $items,
+            'count' => $count
+        ]);
     }
 
     /**

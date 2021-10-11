@@ -1,10 +1,11 @@
-<li id="{{ $id }}">
-    <a href="{{ url("admin/section/show/$id") }}" class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 cursor-pointer shadow-sm" style="height: 94px;">
-        <div class="flex flex-row items-center">
-            <img class="mr-4" src="https://cafe.dracherie.com.br/assets/img/pratos/115.jpg" alt="Item image" width="150" />
+<li id="{{ $item['item_id'] }}">
+    <div class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 shadow-sm" style="height: 94px;">
+        <h4 class="w-20 flex items-center justify-center">{{ $item['item_id'] }}</h4>
+        <div class="flex flex-row items-center flex-1">
+            <img class="mr-4" src="{{ asset('images/cappuccino.jpg') }}" alt="Item image" width="150" />
             <div>
-                <h3 class="text-gray-900 mb-1 text-md">Cappuccino</h3>
-                <p class="text-sm font-medium">R$ 12,00</p>
+                <h3 class="text-gray-900 mb-1 text-md">{{ $item['name'] }}</h3>
+                <p class="text-sm font-medium">R$ @php echo str_replace('.', ',', number_format($item['price'], 2)); @endphp </p>
             </div>
         </div>
         <div class="flex flex-row items-center gap-x-4 font-normal text-sm px-5 py-6">
@@ -20,5 +21,5 @@
                 <span>Remover</span>
             </button>
         </div>
-    </a>
+    </div>
 </li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -15,6 +16,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request): View
     {
-        return view('home.main');
+        $sections = Section::All();
+
+        return view('home.main')->with('sections', $sections);
     }
 }

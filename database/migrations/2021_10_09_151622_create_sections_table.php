@@ -13,8 +13,26 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
-            $table->id();
+        Schema::create('section', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('position');
+            $table->boolean('active');
+            $table->timestamps();
+        });
+
+        Schema::create('section_item', function (Blueprint $table) {
+            $table->increments('item_id');
+            $table->unsignedInteger('section_id');
+            $table->string('name');
+            $table->mediumText('description');
+            $table->double('price');
+            $table->integer('position');
+            $table->boolean('active');
+            $table->foreign('section_id')
+                ->references('id')
+                ->on('section')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +44,7 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sections');
+        Schema::dropIfExists('section_item');
+        Schema::dropIfExists('section');
     }
 }

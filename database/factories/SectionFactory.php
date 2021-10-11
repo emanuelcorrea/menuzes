@@ -22,7 +22,10 @@ class SectionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->city(),
+            'position' => 1,
+            'active' => 1,
+            'created_at' => now()
         ];
     }
 }

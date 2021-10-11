@@ -8,12 +8,16 @@
         <p class="text-white text-center mt-10 font-poppins px-4 mb-6">Olá, seja bem-vind@! Acesse os nossos menus disponíveis abaixo!</p>
         <nav class="w-full px-6 lg:px-64">
             <ul>
-                <li>
-                    <a href="#" class="shadow-md py-6 bg-white text-center font-poppins mb-4 block focus:bg-pink-cherie focus:text-white transition duration-200 ease-in focus:shadow-xl">São Paulo</a>
-                </li>
-                <li>
-                    <a href="#" class="shadow-md py-6 bg-white text-center font-poppins mb-4 block focus:bg-pink-cherie focus:text-white transition duration-200 ease-in focus:shadow-xl">Belo Horizonte</a>
-                </li>
+                @foreach($sections as $section)
+                    <li>
+                        <a href="#" class="shadow-md py-6 bg-white text-center font-poppins mb-4 block focus:bg-pink-cherie focus:text-white transition duration-200 ease-in focus:shadow-xl">
+                            {{ $section['name'] }}
+                        </a>
+                    </li>
+                @endforeach
+{{--                <li>--}}
+{{--                    <a href="#" class="shadow-md py-6 bg-white text-center font-poppins mb-4 block focus:bg-pink-cherie focus:text-white transition duration-200 ease-in focus:shadow-xl">Belo Horizonte</a>--}}
+{{--                </li>--}}
             </ul>
         </nav>
     </main>

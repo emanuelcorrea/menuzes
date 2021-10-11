@@ -16,8 +16,9 @@
         </div>
         <div class="w-full bg-white">
             <ul>
-                <x-item :id="1"/>
-                <x-item :id="2"/>
+                @foreach($items as $item)
+                    <x-item :item=$item />
+                @endforeach
             </ul>
         </div>
     </div>

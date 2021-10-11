@@ -1,10 +1,10 @@
-<li id="{{ $id }}">
-    <a href="{{ url("admin/section/show/$id") }}" class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 px-5 py-4 cursor-pointer shadow-sm">
+<li id="{{ $section['id'] }}">
+    <a href="{{ url("admin/section/show/{$section['id']}") }}" class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 px-5 py-4 cursor-pointer shadow-sm">
         <div class="flex flex-row items-center">
             <i class="far fa-image py-5 px-12 bg-pink-cherie text-white rounded-sm mr-4 text-2xl"></i>
             <div>
-                <h3 class="text-gray-900">Bebidas</h3>
-                <p class="text-sm">36 pratos</p>
+                <h3 class="text-gray-900">{{ $section['name'] }}</h3>
+                <p class="text-sm">{{ count($section->sectionItems) }} {{ count($section->sectionItems) > 1 ? 'pratos' : 'prato' }}</p>
             </div>
         </div>
         <div class="flex flex-row items-center gap-x-4 font-normal text-sm">

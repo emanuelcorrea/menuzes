@@ -9,18 +9,18 @@ class Item extends Component
     /**
      * Item id
      *
-     * @var int
+     * @var array
      */
-    public $id;
+    public $item;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($id)
+    public function __construct($item)
     {
-        $this->id = $id;
+        $this->item = $item;
     }
 
     /**
