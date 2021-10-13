@@ -16,10 +16,22 @@ class Item extends Model
      */
     protected $attributes = [
         'name' => false,
+        'section_id' => 1,
         'description' => false,
         'price' => false,
-        'position' => false,
-        'active' => false
+        'image_path' => false,
+        'position' => 1,
+        'active' => 1
+    ];
+
+    protected $fillable = [
+        'name',
+        'section_id',
+        'description',
+        'price',
+        'image_path',
+        'position',
+        'active'
     ];
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -22,8 +23,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
     Route::get('/login', [AdminController::class, 'login']);
 
-    Route::prefix('section')->group(function () {
-        Route::get('/show/{section}', [SectionController::class, 'show']);
-    });
+    Route::resource('section', SectionController::class);
+    Route::resource('item', ItemController::class);
 });
 

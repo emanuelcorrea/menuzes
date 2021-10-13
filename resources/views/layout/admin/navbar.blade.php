@@ -1,4 +1,4 @@
-<nav class="fixed inset-y-0 z-10 min-h-screen w-70 shadow-xl font-poppins bg-gradient-to-b from-pink-cherie to-pink-700">
+<nav class="fixed inset-y-0 z-10 min-h-screen w-64 shadow-xl font-poppins bg-gradient-to-b from-pink-cherie to-pink-700">
     <div class="w-full pt-2 flex justify-center cursor-pointer">
         <img src="{{ asset('images/logo.png') }}" width="80" alt="Logo">
     </div>

@@ -16,6 +16,7 @@ class CreateSectionsTable extends Migration
         Schema::create('section', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->mediumText('description')->nullable();
             $table->integer('position');
             $table->boolean('active');
             $table->timestamps();
@@ -25,7 +26,7 @@ class CreateSectionsTable extends Migration
             $table->increments('item_id');
             $table->unsignedInteger('section_id');
             $table->string('name');
-            $table->mediumText('description');
+            $table->mediumText('description')->nullable();
             $table->double('price');
             $table->integer('position');
             $table->boolean('active');

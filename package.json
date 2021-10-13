@@ -15,6 +15,10 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.3.9",
+        "postcss-import": "^12",
         "tailwindcss": "^2.2.16"
+    },
+    "dependencies": {
+        "micromodal": "^0.4.6"
     }
 }

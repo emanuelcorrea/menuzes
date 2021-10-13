@@ -8,7 +8,8 @@
         <div class="w-full flex flex-col px-5 py-4 bg-white font-poppins border">
             <div class="flex flex-row justify-between items-center">
                 <h2>Seções no menu</h2>
-                <div class="flex flex-row items-center cursor-pointer rounded-3xl bg-pink-cherie text-white py-2.5 px-8 shadow-md transition duration-200 ease hover:bg-opacity-80">
+                <div class="flex flex-row items-center cursor-pointer rounded-3xl bg-pink-cherie text-white py-2.5 px-8 shadow-md transition duration-200 ease hover:bg-opacity-80"
+                    data-micromodal-trigger="section-add">
                     <i class="fas fa-plus pr-2"></i>
                     <span>Adicionar Seção</span>
                 </div>
@@ -22,4 +23,6 @@
             </ul>
         </div>
     </div>
+    <x-modal.section-add />
+    <x-modal.edit />
 @endsection

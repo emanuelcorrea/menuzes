@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Section;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
-class SectionController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,38 +31,43 @@ class SectionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        $section = new Section();
+        $itemName = $request->input('item-name');
+        $sectionId = $request->input('section-id');
 
-        $section->name = $request->input('section-name');
-        $section->description = $request->input('section-description');
-        $section->active = 1;
-        $section->position = 1;
-        $section->save();
+        if ($request->image) {
+            $newImageName = str_replace(' ', '-', $itemName) . '.' . $request->image->extension();
+            $dirName = 'images';
+            $request->image->move(public_path('images'), $newImageName);
 
-        return redirect('/admin');
+            $path = "/$dirName/$newImageName";
+        }
+
+        Item::create([
+            'name' => $itemName,
+            'section_id' => $sectionId,
+            'description' => $request->input('item-description'),
+            'price' => $request->input('item-price'),
+            'active' => 1,
+            'position' => 1,
+            'image_path' => $path ?? ''
+        ]);
+
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $section = Section::find($id);
 
-        $items = $section->sectionItems;
-        $count = count($items);
-
-        return view('admin.section.show', [
-            'section' => $section,
-            'count' => $count
-        ]);
     }
 
     /**

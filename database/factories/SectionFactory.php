@@ -23,6 +23,7 @@ class SectionFactory extends Factory
     {
         return [
             'name' => $this->faker->city(),
+            'description' => $this->faker->text(150),
             'position' => 1,
             'active' => 1,
             'created_at' => now()

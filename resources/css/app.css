@@ -1,6 +1,10 @@
+@import 'micromodal';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
+@tailwind variants;
 
 .main-content {
     padding-left: 17rem;
