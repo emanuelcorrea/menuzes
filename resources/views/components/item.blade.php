@@ -1,4 +1,4 @@
-<li class="item" id="{{ $item['item_id'] }}" data-id="{{ $item['item_id'] }}" data-name="{{ $item['name'] }}" data-price="{{ $item['price'] }}" data-description="{{ $item['description'] }}" data-active="{{ $item['active'] }}" data-image-path="{{ $item['image_path'] }}">
+<li class="item border border-t-0 border-b-0" data-id="{{ $item['item_id'] }}" data-name="{{ $item['name'] }}" data-price="{{ $item['price'] }}" data-description="{{ $item['description'] }}" data-active="{{ $item['active'] }}" data-image-path="{{ $item['image_path'] }}">
     <div class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 shadow-sm" style="height: 94px;">
         <h4 class="w-20 flex items-center justify-center">{{ $item['item_id'] }}</h4>
         <div class="item-thumbnail flex flex-row items-center flex-1">
