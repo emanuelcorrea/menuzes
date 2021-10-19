@@ -22,6 +22,10 @@ Route::get('/', HomeController::class);
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
     Route::get('/login', [AdminController::class, 'login']);
+    
+    Route::prefix('/section')->group(function () {
+        Route::put('/visible/{id}', [SectionController::class, 'visible'])->name('section.visible');
+    });
 
     Route::resource('section', SectionController::class);
     Route::resource('item', ItemController::class);

@@ -21,6 +21,18 @@ class Section extends Model
     ];
 
     /**
+     * Fillable
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'description',
+        'position',
+        'active'
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string

@@ -4,7 +4,7 @@ namespace App\View\Components\Modal;
 
 use Illuminate\View\Component;
 
-class Edit extends Component
+class SectionEdit extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Edit extends Component
      */
     public function render()
     {
-        return view('components.modal.edit');
+        return view('components.modal.section-edit');
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9be6d5f25657f3197250ff758b6e6c23",
+    "content-hash": "3c07061b64e208e27d9e802b3aa4aa3b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -940,6 +940,56 @@
                 }
             ],
             "time": "2021-10-06T17:43:30+00:00"
+        },
+        {
+            "name": "halivert/laravel-js-routes",
+            "version": "v4.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/halivert/laravel-js-routes.git",
+                "reference": "17a52af6184daa4668c19fc84ae7b33a2aa0ab4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/halivert/laravel-js-routes/zipball/17a52af6184daa4668c19fc84ae7b33a2aa0ab4b",
+                "reference": "17a52af6184daa4668c19fc84ae7b33a2aa0ab4b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">= 6.20.14 |>= 7.30.4|>= 8.40.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Halivert\\JSRoutes\\JSRoutesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Halivert\\JSRoutes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Halí V.",
+                    "email": "halivelazquez@outlook.com"
+                }
+            ],
+            "description": "Command for use Laravel routes in JS",
+            "support": {
+                "issues": "https://github.com/halivert/laravel-js-routes/issues",
+                "source": "https://github.com/halivert/laravel-js-routes/tree/v4.2.3"
+            },
+            "time": "2021-07-14T03:53:47+00:00"
         },
         {
             "name": "laravel/framework",

@@ -11,7 +11,22 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.browserSync({
+    proxy: 'http://127.0.0.1:8000',
+    ui: false,
+    notify: false,
+    injectChanges: true,
+    minify: false,
+    timestamps: false
+});
+ 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        require("tailwindcss"),
-    ]);
+    .js('resources/js/admin.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css').options({
+        postCss: [
+            require('postcss-import'),
+            require('autoprefixer'),
+            require('tailwindcss')
+        ]
+    })
+    .js("resources/js/routes", "public/js");

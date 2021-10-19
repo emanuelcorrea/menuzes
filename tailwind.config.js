@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: [
     './resources/**/*.blade.php',
     './resources/**/*.js',
@@ -8,17 +9,22 @@ module.exports = {
   theme: {
     extend: {
         fontFamily: {
-            'poppins': ['Poppins']
+          'poppins': ['Poppins']
         },
         colors: {
             pink: {
                 cherie: '#F49AA5'
             }
+        },
+        zIndex: {
+          '-10': '-10',
         }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss/nesting'),
+  ],
 }

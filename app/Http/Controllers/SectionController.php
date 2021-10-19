@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Section;
 use Illuminate\Http\Request;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class SectionController extends Controller
 {
@@ -37,13 +38,14 @@ class SectionController extends Controller
     {
         $section = new Section();
 
-        $section->name = $request->input('section-name');
-        $section->description = $request->input('section-description');
-        $section->active = 1;
-        $section->position = 1;
-        $section->save();
+        Section::create([
+            'name' => $request->input('section-name'),
+            'description' => $request->input('section-description'),
+            'active' => 1,
+            'position' => '1'
+        ]);
 
-        return redirect('/admin');
+        return redirect()->back();
     }
 
     /**
@@ -73,7 +75,7 @@ class SectionController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -85,7 +87,31 @@ class SectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Section::where('id', $id)
+            ->update([
+                'name' => $request->input('section-name'),
+                'description' => $request->input('section-description')
+            ]);
+
+        return redirect()->back();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function visible($id)
+    {
+        $section = Section::find($id);
+        
+        Section::where('id', $id)
+            ->update([
+                'active' => !$section->active
+            ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -96,6 +122,8 @@ class SectionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Section::where('id', $id)->first()->delete();
+
+        return redirect()->back();
     }
 }

@@ -1,0 +1,30 @@
+/* SweetAlert 2 */
+
+.animate__hyper_faster {
+    --animate-duration: 0.15s;
+}
+
+.swal2-popup {
+    @apply shadow-md;
+}
+
+.swal2-html-container,
+.swal2-container {
+    @apply m-0 !important;
+}
+
+.swal2-title {
+    @apply text-xl p-0 mx-0 mt-0 mb-10 font-normal text-gray-800 !important;
+}
+
+.swal2-actions {
+    @apply justify-end m-0 mt-4 !important;
+}
+
+.swal2-actions button {
+    @apply w-full sm:w-36 text-pink-cherie sm:mr-4 text-center py-2.5 ring-2 ring-pink-cherie hover:ring-2 hover:text-white rounded-3xl cursor-pointer hover:bg-pink-cherie transition duration-200 hover:shadow-md focus:bg-pink-cherie focus:text-white focus:ring-2 focus:ring-offset-2 focus:target:ring-pink-cherie;
+}
+
+.swal2-confirm {
+    @apply bg-pink-cherie text-white !important;
+}
