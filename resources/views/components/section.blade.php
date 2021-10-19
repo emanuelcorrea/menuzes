@@ -1,7 +1,7 @@
-<li id="{{ $section['id'] }}" class="section flex flex-row items-center justify-between" data-id="{{ $section['id'] }}" data-name="{{ $section['name'] }}" data-description="{{ $section['description'] }}" data-active="{{ $section['active'] }}">
+<li id="{{ $section['id'] }}" class="section flex border border-t-0 flex-row items-center justify-between" data-id="{{ $section['id'] }}" data-name="{{ $section['name'] }}" data-description="{{ $section['description'] }}" data-active="{{ $section['active'] }}">
     <a href="{{ url("admin/section/{$section['id']}") }}" class="flex flex-1 flex-row justify-between group sm:hover:bg-pink-cherie sm:hover:bg-opacity-20 px-5 py-4 cursor-pointer shadow-sm items-center">
         <div class="flex flex-row items-center">
-            <i class="far fa-image py-5 px-12 bg-pink-cherie text-white rounded-sm mr-4 shadow-sm text-2xl"></i>
+            <i class="far fa-image h-[72px] w-[120px] flex items-center justify-center bg-pink-cherie text-white rounded-sm mr-4 shadow-sm text-2xl"></i>
             <div>
                 <h3 class="text-gray-900">{{ $section['name'] }}</h3>
                 <p class="text-sm">{{ count($section->sectionItems) }} {{ count($section->sectionItems) > 1 || count($section->sectionItems) == 0 ? 'pratos' : 'prato' }}</p>

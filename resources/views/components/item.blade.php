@@ -1,7 +1,7 @@
 <li class="item" id="{{ $item['item_id'] }}" data-id="{{ $item['item_id'] }}" data-name="{{ $item['name'] }}" data-price="{{ $item['price'] }}" data-description="{{ $item['description'] }}" data-active="{{ $item['active'] }}" data-image-path="{{ $item['image_path'] }}">
     <div class="flex flex-row justify-between group hover:bg-pink-cherie hover:bg-opacity-20 shadow-sm" style="height: 94px;">
         <h4 class="w-20 flex items-center justify-center">{{ $item['item_id'] }}</h4>
-        <div class="flex flex-row items-center flex-1">
+        <div class="item-thumbnail flex flex-row items-center flex-1">
             @if ($item['image_path'])
                 <div class="mr-4 h-full bg-center bg-cover w-[150px] bg-pink-cherie" style="background-image: url('{{ $item['image_path'] }}');"></div>
             @else
@@ -16,14 +16,19 @@
             </div>
         </div>
         <div class="sm:flex flex-row items-center gap-x-4 font-normal text-sm px-5 py-6">
-            <button id="item-edit" class="w-28 px-16 py-2.5 rounded-3xl text-pink-cherie bg-white hover:text-white hover:bg-pink-cherie group-hover:shadow-sm z-10 flex flex-row justify-center items-center gap-x-2 focus:bg-pink-cherie focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-pink-cherie transition duration-200 ease">
+            <button class="item-edit secundary-button">
                 <span>Editar</span>
             </button>
-            <button id="item-visible" class="w-28 px-16 py-2.5 rounded-3xl text-pink-cherie bg-white hover:text-white hover:bg-pink-cherie group-hover:shadow-sm z-10 flex flex-row justify-center items-center gap-x-2 focus:bg-pink-cherie focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-pink-cherie transition duration-200 ease">
-                <i class="far fa-eye-slash pe-1"></i>
-                <span>Ocultar</span>
+            <button class="item-visible secundary-button">
+                @if ($item['active'])
+                    <i class="far fa-eye-slash pe-1"></i>
+                    <span>Ocultar</span>
+                @else
+                    <i class="far fa-eye"></i>  
+                    <span>Exibir</span>
+                @endif
             </button>
-            <button id="item-destroy" class="w-28 px-16 py-2.5 rounded-3xl text-pink-cherie bg-white hover:text-white hover:bg-pink-cherie group-hover:shadow-sm z-10 flex flex-row justify-center items-center gap-x-2 focus:bg-pink-cherie focus:text-white focus:ring-2 focus:ring-offset-2 focus:ring-pink-cherie transition duration-200 ease">
+            <button class="item-destroy secundary-button">
                 <i class="far fa-trash-alt pe-1"></i>
                 <span>Remover</span>
             </button>

@@ -1,9 +1,9 @@
 <nav class="hidden sm:block fixed inset-y-0 z-10 min-h-screen w-64 shadow-xl font-poppins bg-gradient-to-b from-pink-cherie to-pink-700">
     <div class="w-full pt-2 flex justify-center cursor-pointer">
-        <img src="{{ asset('images/logo.png') }}" width="80" alt="Logo">
+        <img src="{{ asset('images/logo.png') }}" height="45px" width="80px" alt="Logo">
     </div>
     <div class="py-4 px-3 mb-4 flex flex-col items-center justify-center text-center shadow-md">
-        <img class="rounded-full w-14 h-14 mb-2 ring-2 ring-white" src="{{ asset('images/user.jpg') }}" alt="User image">
+        <img class="rounded-full mb-2 ring-2 ring-white" src="{{ asset('images/user.jpg') }}" width="56px" height="56px" alt="User image">
         <div class="flex flex-col text-white pl-2">
             <p class="text-xs">Emanuel da Silva Corrêa</p>
             <span class="text-xs text-pink-200">(emanuel.correa@dracherie.com.br)</span>

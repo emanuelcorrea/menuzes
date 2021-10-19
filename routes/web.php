@@ -19,15 +19,21 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class);
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'index']);
-    Route::get('/login', [AdminController::class, 'login']);
-    
-    Route::prefix('/section')->group(function () {
-        Route::put('/visible/{id}', [SectionController::class, 'visible'])->name('section.visible');
-    });
+Route::middleware('cache.headers:public;max_age=2628000;etag;')->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/', [AdminController::class, 'index']);
+        Route::get('/login', [AdminController::class, 'login']);
+        
+        Route::prefix('/section')->group(function () {
+            Route::put('/visible/{id}', [SectionController::class, 'visible'])->name('section.visible');
+        });
 
-    Route::resource('section', SectionController::class);
-    Route::resource('item', ItemController::class);
+        Route::prefix('/item')->group(function () {
+            Route::put('/visible/{id}', [ItemController::class, 'visible'])->name('item.visible');
+        });
+    
+        Route::resource('section', SectionController::class);
+        Route::resource('item', ItemController::class);
+    });
 });
 

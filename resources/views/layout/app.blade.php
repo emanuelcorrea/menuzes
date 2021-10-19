@@ -7,9 +7,17 @@
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 
         <!-- Styles -->
-        <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fonts.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <!-- Fonts -->
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-Bold.ttf') }}" type="ttf">
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-ExtraBold.ttf') }}" type="ttf">
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-Italic.ttf') }}" type="ttf">
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-Medium.ttf') }}" type="ttf">
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-Regular.ttf') }}" type="ttf">
+        <link rel="preload" as="font" href="{{ asset('fonts/Poppins-Thin.ttf') }}" type="ttf">
 
         <!-- Title -->
         <title>{{ $title }} - Café Cherie</title>

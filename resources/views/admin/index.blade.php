@@ -16,9 +16,13 @@
         </div>
         <div class="w-full bg-white">
             <ul>
-                @foreach($sections as $section)
-                    <x-section :section=$section />
-                @endforeach
+                @if (count($sections))
+                    @foreach($sections as $section)
+                        <x-section :section=$section />
+                    @endforeach
+                @else
+                    <li class="flex items-center justify-center py-10 border border-t-0 text-sm text-gray-500">Não há seções criadas para o menu.</li>
+                @endif
             </ul>
         </div>
     </div>

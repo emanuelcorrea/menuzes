@@ -267,6 +267,9 @@ var routes = {
   "section.visible": {
     "uri": "admin\/section\/visible\/{id}"
   },
+  "item.visible": {
+    "uri": "admin\/item\/visible\/{id}"
+  },
   "section.index": {
     "uri": "admin\/section"
   },

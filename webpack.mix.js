@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.browserSync({
     proxy: 'http://127.0.0.1:8000',
+    host: '192.168.0.143',
+    port: '80',
     ui: false,
     notify: false,
     injectChanges: true,

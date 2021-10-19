@@ -16,9 +16,13 @@
         </div>
         <div class="w-full bg-white">
             <ul>
-                @foreach($section->sectionItems as $item)
-                    <x-item :item=$item />
-                @endforeach
+                @if(count($section->sectionItems))
+                    @foreach($section->sectionItems as $item)
+                        <x-item :item=$item />
+                    @endforeach
+                @else
+                    <li class="flex items-center justify-center py-10 border border-t-0 text-sm text-gray-500">Não há itens criados para o menu.</li>
+                @endif
             </ul>
         </div>
     </div>
